@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Jujutsu Kaisen: Echoes of Cursed Dawn — Demo</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="topbar glass">
+        <div>
+          <p class="eyebrow">PLAYABLE VERTICAL DEMO</p>
+          <h1>Jujutsu Kaisen: Echoes of Cursed Dawn</h1>
+        </div>
+        <div class="rank-pill">Rank: <span id="rank">F</span></div>
+      </header>
+
+      <main class="layout">
+        <section class="left-panel glass">
+          <h2>Operations Board</h2>
+          <p class="muted">Choose a district incident to deploy.</p>
+          <div id="districts" class="district-grid"></div>
+
+          <h3>Mission Brief</h3>
+          <div id="brief" class="brief">
+            Select a district to view operation details.
+          </div>
+          <button id="deployBtn" class="primary" disabled>Deploy to Incident</button>
+        </section>
+
+        <section class="center-panel glass">
+          <div class="hud-row">
+            <div class="stat">
+              <label>HP</label>
+              <div class="bar"><div id="hpBar"></div></div>
+              <span id="hpText"></span>
+            </div>
+            <div class="stat">
+              <label>CE</label>
+              <div class="bar"><div id="ceBar" class="ce"></div></div>
+              <span id="ceText"></span>
+            </div>
+            <div class="stat">
+              <label>Domain</label>
+              <div class="bar"><div id="domainBar" class="domain"></div></div>
+              <span id="domainText"></span>
+            </div>
+          </div>
+
+          <div class="arena" id="arena">
+            <div class="arena-banner" id="arenaBanner">Awaiting deployment...</div>
+            <div class="fighter player" id="player">Sorcerer</div>
+            <div class="fighter enemy" id="enemy">Curse</div>
+            <div id="effects" class="effects"></div>
+          </div>
+
+          <div class="controls">
+            <button data-action="light">Light Combo</button>
+            <button data-action="heavy">Heavy Break</button>
+            <button data-action="technique">Technique (35 CE)</button>
+            <button data-action="summon">Summon Assist (45 CE)</button>
+            <button data-action="domain">Domain Expansion</button>
+            <button data-action="dodge">Perfect Dodge</button>
+          </div>
+        </section>
+
+        <section class="right-panel glass">
+          <h2>Squad & Loadout</h2>
+          <div class="chips" id="loadout"></div>
+          <h3>Combat Log</h3>
+          <ul id="log" class="log"></ul>
+        </section>
+      </main>
+    </div>
+
+    <template id="districtTemplate">
+      <button class="district-card">
+        <strong class="district-name"></strong>
+        <span class="district-threat"></span>
+      </button>
+    </template>
+
+    <script src="script.js"></script>
+  </body>
+</html>
