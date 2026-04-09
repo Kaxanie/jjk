@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JJK Action RPG Demo</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="panel left-panel">
+        <h1>JJK Action RPG</h1>
+        <p class="subtitle">High-level playable demo</p>
+
+        <section>
+          <h2>Status</h2>
+          <div id="hud-status" class="stat-grid"></div>
+          <div class="meter-block">
+            <label>Domain Meter</label>
+            <div class="meter"><div id="domain-meter-fill"></div></div>
+          </div>
+        </section>
+
+        <section>
+          <h2>Quest</h2>
+          <div id="quest-text" class="card"></div>
+        </section>
+
+        <section>
+          <h2>Controls</h2>
+          <ul class="controls">
+            <li><kbd>WASD</kbd> Tile movement</li>
+            <li><kbd>J</kbd> Light combo</li>
+            <li><kbd>K</kbd> Heavy/breaker</li>
+            <li><kbd>L</kbd> Dash (i-frames)</li>
+            <li><kbd>1</kbd>/<kbd>2</kbd> Technique slots</li>
+            <li><kbd>Q</kbd> Summon command</li>
+            <li><kbd>E</kbd> Domain Expansion</li>
+            <li><kbd>F</kbd> Interact / duel trigger</li>
+          </ul>
+        </section>
+      </aside>
+
+      <main class="game-area">
+        <canvas id="game" width="960" height="576" aria-label="JJK RPG demo canvas"></canvas>
+        <div id="floating-toast" class="toast hidden"></div>
+      </main>
+
+      <aside class="panel right-panel">
+        <section>
+          <h2>Loadout</h2>
+          <div id="loadout-text" class="card"></div>
+        </section>
+
+        <section>
+          <h2>Combat Feed</h2>
+          <div id="combat-feed" class="combat-feed"></div>
+        </section>
+
+        <section>
+          <h2>Demo Scope</h2>
+          <div class="card small">
+            <p><strong>Zones:</strong> Hub, Route, Shrine Entrance</p>
+            <p><strong>Systems:</strong> CE, affinity, summon, domain, rank, quest flags</p>
+            <p><strong>Goal:</strong> Exorcise 4 curses and defeat Shrine Warden</p>
+          </div>
+        </section>
+      </aside>
+    </div>
+
+    <script src="game.js"></script>
+  </body>
+</html>
