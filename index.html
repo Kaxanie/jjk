@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>JJK: Echoes of Cursed Dawn — Playable Demo</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="app">
+    <header>
+      <h1>JUJUTSU KAISEN: ECHOES OF CURSED DAWN</h1>
+      <p class="subtitle">Playable demo — top-down exploration + turn-based combat</p>
+    </header>
+
+    <section class="hud">
+      <div id="chapter">Chapter: Enrollment Incident</div>
+      <div id="rank">Exorcism Rank: F</div>
+      <div id="objective">Objective: Accept the mission at the board (M).</div>
+    </section>
+
+    <section class="game-area">
+      <canvas id="world" width="640" height="448" aria-label="Game world"></canvas>
+      <aside class="panel">
+        <h2>Controls</h2>
+        <ul>
+          <li><b>WASD / Arrow keys</b>: Move</li>
+          <li><b>M</b>: Interact (mission board / gate / seals)</li>
+          <li><b>B</b>: Open battle tutorial</li>
+          <li><b>R</b>: Restart demo</li>
+        </ul>
+        <h3>Party</h3>
+        <div id="partyStats"></div>
+        <h3>Log</h3>
+        <div id="log" class="log" aria-live="polite"></div>
+      </aside>
+    </section>
+  </div>
+
+  <div id="battleOverlay" class="overlay hidden" role="dialog" aria-modal="true">
+    <div class="battle-card">
+      <h2 id="battleTitle">Battle</h2>
+      <div class="battle-grid">
+        <div>
+          <h3>Allies</h3>
+          <div id="allies"></div>
+        </div>
+        <div>
+          <h3>Enemies</h3>
+          <div id="enemies"></div>
+        </div>
+      </div>
+
+      <div class="turn-order" id="turnOrder"></div>
+
+      <div class="actions">
+        <label for="actorSelect">Actor</label>
+        <select id="actorSelect"></select>
+
+        <label for="techniqueSelect">Technique</label>
+        <select id="techniqueSelect"></select>
+
+        <label for="targetSelect">Target</label>
+        <select id="targetSelect"></select>
+
+        <button id="useTechnique">Use Technique</button>
+        <button id="endTurn">End Turn</button>
+      </div>
+      <p class="battle-help">Domain Expansion unlocks for the boss fight after collecting all 3 Bell Seals.</p>
+      <div id="battleLog" class="log"></div>
+    </div>
+  </div>
+
+  <script src="main.js"></script>
+</body>
+</html>
